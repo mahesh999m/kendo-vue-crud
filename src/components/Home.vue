@@ -47,8 +47,6 @@ export default {
   name: "Home",
   data() {
     return {
-      product: {},
-      ProductName: "",
       localData: dataProvider.localDataSource,
       schema: {
         model: {
