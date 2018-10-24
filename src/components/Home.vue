@@ -54,14 +54,14 @@ export default {
         model: {
           id: "ProductID",
           fields: {
-            ProductName: { validation: { required: true } },
+            ProductName: { 
+              type: "string"
+             },
             UnitPrice: {
-              type: "number",
-              validation: { required: true, min: 1 }
+              type: "number"
             },
             UnitsInStock: {
-              type: "number",
-              validation: { min: 0, required: true }
+              type: "number"
             }
           }
         }
@@ -75,9 +75,7 @@ export default {
       $("#grid tbody")
         .find("tr")
         .each(function() {
-          var model = theGrid.dataItem(this);
-          console.log(model, this);
-          console.log(model.dirty);
+          let model = theGrid.dataItem(this);
           if (model.dirty === true) {
             alert("Record updated");
           }
@@ -86,9 +84,7 @@ export default {
       $("#grid").focus();
     },
     deleteFnc: (ev) => {
-      console.log("this is delete function inside");
       let list = $('[data-role="grid"]').data("kendoGrid");
-      console.log(list);
       let tr = ev.target.closest("tr");
       tr.remove();
     }

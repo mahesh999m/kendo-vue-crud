@@ -39,9 +39,7 @@ export default {
     },
      methods: {
         onAdd () {
-            console.log(this.newproduct);
             dataProvider.localDataSource.unshift(this.newproduct);
-            console.log(dataProvider.localDataSource);
             this.$router.push('/');
         },
         onCancel () {
