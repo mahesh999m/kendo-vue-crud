@@ -68,7 +68,7 @@ export default {
   },
 
   methods: {
-    editAll: (localData) => {
+    editAll: () => {
       let theGrid = $("#grid").data("kendoGrid");
       $("#grid tbody")
         .find("tr")
